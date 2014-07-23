@@ -692,6 +692,9 @@ function(RmcBackbone, $, _, _s, _bootstrap, _user, _course, _util, _facebook,
       this.$el.html(this.template({}));
       this.$('.schedule-input-placeholder')
         .replaceWith(this.scheduleInputView.render().el);
+      var dialogbox = this.$(".schedule-input-modal");
+      dialogbox.prop("tabIndex", "0");
+      dialogbox.focus(); // TODO only do this the first time it's rendered?
       return this;
     }
   });
